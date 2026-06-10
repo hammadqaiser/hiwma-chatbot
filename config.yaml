@@ -1,0 +1,49 @@
+# Waste Management Chatbot — Pipeline Configuration
+# To reuse: change documents.source_dir, swap llm.provider + api_key
+
+project:
+  name: "Waste Management Chatbot"
+  version: "0.1.0"
+
+# ─── Document Source ─────────────────────────────────────────────
+documents:
+  source_dir: "./Books"
+  supported_formats: ["pdf"]
+  exclude_patterns: ["*resume*", "*Resume*"]
+
+# ─── Ingestion Pipeline ─────────────────────────────────────────
+ingestion:
+  parser: "pymupdf"               # Options: pymupdf, unstructured, llamaparse
+  chunk_size: 1000                 # Max tokens per chunk
+  chunk_overlap: 200               # Overlap between consecutive chunks
+  min_chunk_size: 100              # Skip chunks smaller than this
+
+# ─── Retriever ───────────────────────────────────────────────────
+retriever:
+  type: "vector"                   # Options: vector, pageindex, hybrid
+  vector_db: "chromadb"            # Options: chromadb, pinecone, qdrant, pgvector
+  embedding_model: "all-MiniLM-L6-v2"  # Free, local, 384-dim
+  top_k: 5                        # Number of chunks to retrieve
+  collection_name: "waste_management_books"
+  persist_directory: "./data/chromadb"
+
+# ─── LLM Gateway ────────────────────────────────────────────────
+llm:
+  provider: "groq"                 # Options: groq, google, openai, anthropic, ollama
+  model: "llama-3.3-70b-versatile" # Model name for the chosen provider
+  temperature: 0.1                 # Low temperature for factual accuracy
+  max_tokens: 2048                 # Max response length
+  # API key loaded from environment: GROQ_API_KEY, GOOGLE_API_KEY, etc.
+
+# ─── Chat History ────────────────────────────────────────────────
+chat_history:
+  enabled: true
+  storage: "sqlite"                # Options: sqlite, postgresql
+  database_path: "./data/chat_history.db"
+
+# ─── Server ──────────────────────────────────────────────────────
+server:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins: ["*"]              # Restrict in production
+  rate_limit: 60                   # Requests per minute per IP

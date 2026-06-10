@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widget Demo — Waste Management Simulator</title>
+  <style>
+    /* Simulates the host page (e.g., a waste management simulator) */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #1a202c;
+    }
+    .demo-nav {
+      background: #2d3748;
+      color: white;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .demo-nav__badge {
+      padding: 2px 8px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 400;
+    }
+    .demo-content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .demo-content h1 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      color: #2d3748;
+    }
+    .demo-content p {
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .demo-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .demo-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #2d3748;
+    }
+    .demo-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .demo-card li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f4f8;
+      color: #4a5568;
+    }
+    .demo-card li:last-child { border: none; }
+    .demo-info {
+      background: #ebf8ff;
+      border: 1px solid #bee3f8;
+      border-radius: 8px;
+      padding: 16px;
+      color: #2b6cb0;
+      font-size: 0.9rem;
+      margin: 32px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="demo-nav">
+    🏗️ Waste Management Simulator
+    <span class="demo-nav__badge">Demo</span>
+  </nav>
+
+  <main class="demo-content">
+    <h1>Waste Management Simulator Dashboard</h1>
+    <p>
+      This page simulates a government waste management application. 
+      The chatbot widget in the bottom-right corner provides instant 
+      access to technical knowledge from waste management books.
+    </p>
+
+    <div class="demo-card">
+      <h2>📊 Simulation Parameters</h2>
+      <ul>
+        <li>🏙️ City Population: 500,000</li>
+        <li>📦 Daily Waste Generation: 325 tons/day</li>
+        <li>♻️ Recycling Rate: 34%</li>
+        <li>🏭 Landfill Capacity: 2.1M cubic meters</li>
+        <li>🌡️ Avg. Temperature: 28°C</li>
+      </ul>
+    </div>
+
+    <div class="demo-card">
+      <h2>📋 Active Modules</h2>
+      <ul>
+        <li>✅ Waste Collection Routing</li>
+        <li>✅ Landfill Capacity Forecasting</li>
+        <li>✅ Leachate Treatment Simulation</li>
+        <li>⏳ Composting Process Modeling</li>
+        <li>⏳ Emission Calculation Engine</li>
+      </ul>
+    </div>
+
+    <div class="demo-info">
+      💡 <strong>Try the chatbot!</strong> Click the ♻️ icon in the bottom-right 
+      corner to ask questions about waste management. The chatbot answers from 
+      technical books with full source citations.
+    </div>
+  </main>
+
+  <!-- 
+    ═══════════════════════════════════════════════════════════════
+    CHATBOT WIDGET — One-line embed!
+    
+    To embed on your site, add this single script tag:
+    <script src="https://your-domain.com/widget.js" data-api-url="https://your-api.com"></script>
+    ═══════════════════════════════════════════════════════════════
+  -->
+  <script src="widget.js" data-api-url=""></script>
+
+</body>
+</html>

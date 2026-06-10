@@ -1,0 +1,47 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables (contains API keys)
+.env
+.env.local
+.env.production
+
+# Runtime data (generated locally — not portable)
+data/
+*.db
+
+# PDF source books (too large for Git, user-provided)
+Books/
+
+# AI agent config (local development tools)
+.agents/
+
+# Test / CI caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE and editor settings
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

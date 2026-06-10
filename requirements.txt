@@ -1,0 +1,30 @@
+# ═══════════════════════════════════════════════════════════════════
+# Waste Management Chatbot — Python Dependencies
+# Install: pip install -r requirements.txt
+# ═══════════════════════════════════════════════════════════════════
+
+# ─── Core ─────────────────────────────────────────────────────────
+pymupdf>=1.25.0                  # PDF parsing
+sentence-transformers>=3.0       # Local embeddings (all-MiniLM-L6-v2)
+chromadb>=0.5.0                  # Vector database (free, file-based)
+pyyaml>=6.0                      # Config file parsing
+pydantic>=2.0                    # Data validation
+pydantic-settings>=2.0           # Settings management
+python-dotenv>=1.0               # .env file loading
+rank-bm25>=0.2.2                 # BM25 keyword retrieval
+
+# ─── API Server ───────────────────────────────────────────────────
+fastapi>=0.115                   # REST API framework
+uvicorn[standard]>=0.30          # ASGI server
+aiosqlite>=0.20                  # Async SQLite for chat history
+
+# ─── LLM Providers ───────────────────────────────────────────────
+groq>=0.12                       # Groq (default — free tier, fast)
+google-genai>=1.0                # Google Gemini
+openai>=1.50                     # OpenAI / Azure OpenAI
+anthropic>=0.40                  # Anthropic Claude
+httpx>=0.27                      # HTTP client (for Ollama)
+
+# ─── Testing (dev only) ──────────────────────────────────────────
+pytest>=8.0
+pytest-asyncio>=0.24

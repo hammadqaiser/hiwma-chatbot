@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Management Chatbot — AI-Powered Knowledge Assistant</title>
+  <meta name="description" content="Ask questions about waste management, solid waste engineering, and environmental science. Powered by RAG with technical book citations.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="chat-app">
+
+    <!-- Header -->
+    <header class="chat-header">
+      <div class="chat-header__icon">♻️</div>
+      <div class="chat-header__info">
+        <h1 class="chat-header__title">Waste Management Assistant</h1>
+        <p class="chat-header__subtitle">AI-powered answers from technical books & manuals</p>
+      </div>
+      <div class="chat-header__status">
+        <span class="chat-header__status-dot"></span>
+        <span>Online</span>
+      </div>
+    </header>
+
+    <!-- Messages -->
+    <main class="chat-messages" id="chat-messages">
+
+      <!-- Welcome Screen (hidden after first message) -->
+      <div class="welcome-message" id="welcome-message">
+        <div class="welcome-message__icon">♻️</div>
+        <h2 class="welcome-message__title">Ask me anything about waste management</h2>
+        <p class="welcome-message__text">
+          I can answer questions about solid waste engineering, landfill design, 
+          recycling processes, environmental regulations, and more — all grounded 
+          in technical books with source citations.
+        </p>
+        <div class="welcome-suggestions">
+          <button class="suggestion-chip">What is leachate and how is it managed?</button>
+          <button class="suggestion-chip">Explain the waste hierarchy</button>
+          <button class="suggestion-chip">What are the types of composting?</button>
+          <button class="suggestion-chip">How do modern landfills work?</button>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Input Area -->
+    <div class="chat-input-area">
+      <textarea
+        id="chat-input"
+        class="chat-input"
+        placeholder="Ask a question about waste management..."
+        rows="1"
+        aria-label="Chat message input"
+      ></textarea>
+      <button id="chat-send-btn" class="chat-send-btn" aria-label="Send message">
+        ➤
+      </button>
+    </div>
+
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>
